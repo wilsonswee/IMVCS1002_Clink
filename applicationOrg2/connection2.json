@@ -1,0 +1,43 @@
+{
+    "certificateAuthorities": {
+        "org2ca-api.127-0-0-1.nip.io:8083": {
+            "url": "http://org2ca-api.127-0-0-1.nip.io:8083"
+        }
+    },
+    "client": {
+        "connection": {
+            "timeout": {
+                "orderer": "300",
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        },
+        "organization": "Org2"
+    },
+    "display_name": "Org2 Gateway",
+    "id": "org2gateway",
+    "name": "Org2 Gateway",
+    "organizations": {
+        "Org2": {
+            "certificateAuthorities": [
+                "org2ca-api.127-0-0-1.nip.io:8083"
+            ],
+            "mspid": "Org2MSP",
+            "peers": [
+                "org2peer-api.127-0-0-1.nip.io:8083"
+            ]
+        }
+    },
+    "peers": {
+        "org2peer-api.127-0-0-1.nip.io:8083": {
+            "grpcOptions": {
+                "grpc.default_authority": "org2peer-api.127-0-0-1.nip.io:8083",
+                "grpc.ssl_target_name_override": "org2peer-api.127-0-0-1.nip.io:8083"
+            },
+            "url": "grpc://org2peer-api.127-0-0-1.nip.io:8083"
+        }
+    },
+    "type": "gateway",
+    "version": "1.0"
+}

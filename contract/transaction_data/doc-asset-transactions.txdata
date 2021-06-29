@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "docAssetExists",
+        "transactionLabel": "A test docAssetExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createDocAsset",
+        "transactionLabel": "A test createDocAsset transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readDocAsset",
+        "transactionLabel": "A test readDocAsset transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateDocAsset",
+        "transactionLabel": "A test updateDocAsset transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteDocAsset",
+        "transactionLabel": "A test deleteDocAsset transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
