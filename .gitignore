@@ -82,5 +82,5 @@ testdoc.txt
 LocalConnection.json
 connection.json
 BlockchainPlatformClinkGwConnection.json
-dist
-wallet
+dist/
+wallet/
