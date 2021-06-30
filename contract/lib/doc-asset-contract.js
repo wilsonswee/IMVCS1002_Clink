@@ -49,6 +49,7 @@ class DocAssetContract extends Contract {
         }
     
         console.info('============= END : Initialize Ledger ===========');
+ //       process.exit();
     }
 
 
