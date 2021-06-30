@@ -29,11 +29,11 @@ async function main() {
         const walletPath = path.join(process.cwd(), 'IBPOrg1Wallet');
         const wallet = await fabric_network_1.Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
-        // Create a new gateway for connecting to our peer node.
-        const gateway = new fabric_network_1.Gateway();
         // const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection.json');
         const connectionProfilePath = path.resolve(__dirname, '..', 'BlockchainPlatformClinkGwConnection.json');
         const connectionProfile = JSON.parse(fs.readFileSync(connectionProfilePath, 'utf8')); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
+        // Create a new gateway for connecting to our peer node.
+        const gateway = new fabric_network_1.Gateway();
         //const connectionOptions: any = { wallet, identity: 'Org1 Admin', discovery: { enabled: true, asLocalhost: true } };
         const connectionOptions = { wallet, identity: 'Org1 CA Admin', discovery: { enabled: true, asLocalhost: false } };
         await gateway.connect(connectionProfile, connectionOptions);
@@ -43,7 +43,7 @@ async function main() {
         const contract = network.getContract('contract');
         // Submit the specified transaction. ACRA updating from ORg1
         await contract.submitTransaction('updateDocAsset', 'REF6', 'UEN20210606', '', '');
-        console.log('Transaction has been submitted');
+        console.log('Transaction committed');
         // Disconnect from the gateway.
         gateway.disconnect();
         process.exit();

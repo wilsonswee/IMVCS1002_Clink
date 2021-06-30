@@ -29,7 +29,7 @@ async function main(): Promise<void> {
 
     // Submit the specified transaction.
     await contract.submitTransaction('updateDocAsset', 'REF6', '','Y','N' );
-    console.log('Transaction has been submitted');
+    console.log('Transaction committed ');
 
     // Disconnect from the gateway.
     gateway.disconnect();

@@ -42,8 +42,8 @@ async function main() {
         // Get the contract from the network.
         const contract = network.getContract('contract');
         // Submit the specified transaction.
-        await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T', '', '6/6/2021', 'Dr Rizal', 'Malaysia', '', '');
-        console.log('Transaction has been submitted');
+        await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T', '', '30/6/2021', 'Dr Rizal', 'Malaysia', '', '');
+        console.log('Transaction committed');
         // Disconnect from the gateway.
         gateway.disconnect();
         process.exit();

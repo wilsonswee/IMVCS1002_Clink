@@ -83,8 +83,9 @@ class DocAssetContract extends Contract {
             docType: 'NEW',
         };
         const buffer = Buffer.from(JSON.stringify(_document));
-        await ctx.stub.putState(docAssetId, buffer);
-        console.info('============= END : Create DocAsset ===========');
+        const asset = await ctx.stub.putState(docAssetId, buffer);
+        console.info('=====Created transaction committed ======= ');
+        return asset;
     }
 
     async readDocAsset(ctx, docAssetId) {

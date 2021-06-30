@@ -6,20 +6,19 @@ async function main(): Promise<void> {
   try {
 
     // Create a new file system based wallet for managing identities.
-    //const walletPath: string = path.join(process.cwd(), 'Org1Wallet');
-    const walletPath: string = path.join(process.cwd(), 'IBPOrg1Wallet');
+    //const walletPath: string = path.join(process.cwd(), 'Org2Wallet');
+    const walletPath: string = path.join(process.cwd(), 'IBPOrg2Wallet'); 
     const wallet: Wallet = await Wallets.newFileSystemWallet(walletPath);
     console.log(`Wallet path: ${walletPath}`);
 
     // Create a new gateway for connecting to our peer node.
     const gateway: Gateway = new Gateway();
-    //const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection.json');
-    const connectionProfilePath: string = path.resolve(__dirname, '..', 'BlockchainPlatformClinkGwConnection.json');
-    
+    //const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection2.json');
+    const connectionProfilePath: string = path.resolve(__dirname, '..', 'BlockchainPlatformClinkGwOrg2Connection.json');
     const connectionProfile: any = JSON.parse(fs.readFileSync(connectionProfilePath, 'utf8')); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
     
-    //const connectionOptions: any = { wallet, identity: 'Org1 Admin', discovery: { enabled: true, asLocalhost: true } };
-    const connectionOptions: any = { wallet, identity: 'Org1 CA Admin', discovery: { enabled: true, asLocalhost: false } };
+    //const connectionOptions: any = { wallet, identity: 'Org2 Admin', discovery: { enabled: true, asLocalhost: true } };
+    const connectionOptions: any = { wallet, identity: 'Org2 CA Admin', discovery: { enabled: true, asLocalhost: false } };
     await gateway.connect(connectionProfile, connectionOptions);
 
     // Get the network (channel) our contract is deployed to.
@@ -29,8 +28,8 @@ async function main(): Promise<void> {
     const contract: Contract = network.getContract('contract');
 
     // Submit the specified transaction.
-    await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T','', '30/6/2021', 'Dr Rizal', 'Malaysia','','' );
-    console.log('Transaction committed');
+    await contract.submitTransaction('updateDocAsset', 'REF4', '','Y','N' );
+    console.log('Transaction has been submitted');
 
     // Disconnect from the gateway.
     gateway.disconnect();

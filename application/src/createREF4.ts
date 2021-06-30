@@ -29,8 +29,8 @@ async function main(): Promise<void> {
     const contract: Contract = network.getContract('contract');
 
     // Submit the specified transaction.
-    await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T','', '30/6/2021', 'Dr Rizal', 'Malaysia','','' );
-    console.log('Transaction committed');
+    await contract.submitTransaction('createDocAsset', 'REF4', 'S88106538D','', '29/6/2021', 'Mr Hyperledger', '11 Ochard Rd ','','' );
+    console.log('Transaction has been submitted');
 
     // Disconnect from the gateway.
     gateway.disconnect();

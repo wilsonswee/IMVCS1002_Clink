@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Logs
+# LogsBlockchainPlatformClinkGwConnection.json
 logs
 *.log
 npm-debug.log*
@@ -60,6 +60,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.vscode
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -75,3 +76,11 @@ typings/
 
 # Serverless directories
 .serverless
+
+# misc
+testdoc.txt
+LocalConnection.json
+connection.json
+BlockchainPlatformClinkGwConnection.json
+dist
+wallet

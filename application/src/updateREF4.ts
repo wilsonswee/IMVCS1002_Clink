@@ -13,10 +13,10 @@ async function main(): Promise<void> {
 
     // Create a new gateway for connecting to our peer node.
     const gateway: Gateway = new Gateway();
-    //const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection.json');
+    // const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection.json');
     const connectionProfilePath: string = path.resolve(__dirname, '..', 'BlockchainPlatformClinkGwConnection.json');
-    
     const connectionProfile: any = JSON.parse(fs.readFileSync(connectionProfilePath, 'utf8')); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
+    
     
     //const connectionOptions: any = { wallet, identity: 'Org1 Admin', discovery: { enabled: true, asLocalhost: true } };
     const connectionOptions: any = { wallet, identity: 'Org1 CA Admin', discovery: { enabled: true, asLocalhost: false } };
@@ -28,9 +28,9 @@ async function main(): Promise<void> {
     // Get the contract from the network.
     const contract: Contract = network.getContract('contract');
 
-    // Submit the specified transaction.
-    await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T','', '30/6/2021', 'Dr Rizal', 'Malaysia','','' );
-    console.log('Transaction committed');
+    // Submit the specified transaction. ACRA updating from ORg1
+    await contract.submitTransaction('updateDocAsset', 'REF4', 'UEN2021063078838872','','' );
+    console.log('Transaction has been submitted');
 
     // Disconnect from the gateway.
     gateway.disconnect();

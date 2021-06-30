@@ -29,8 +29,8 @@ async function main(): Promise<void> {
     const contract: Contract = network.getContract('contract');
 
     // Submit the specified transaction.
-    
-    const result = await contract.evaluateTransaction('readDocAsset','REF6');
+    const transactionID = process.argv.slice(2).toString(); 
+    const result = await contract.evaluateTransaction('readDocAsset',transactionID);
     console.log("Transaction has been evaluated, result is:" + result.toString());
 
     // Disconnect from the gateway.
