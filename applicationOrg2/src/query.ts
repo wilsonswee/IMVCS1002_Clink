@@ -8,7 +8,6 @@ async function main(): Promise<void> {
     // Create a new file system based wallet for managing identities.
     //const walletPath: string = path.join(process.cwd(), 'Org2Wallet');
     const walletPath: string = path.join(process.cwd(), 'IBPOrg2Wallet');
-
     const wallet: Wallet = await Wallets.newFileSystemWallet(walletPath);
     console.log(`Wallet path: ${walletPath}`);
 
@@ -30,8 +29,15 @@ async function main(): Promise<void> {
 
     // Submit the specified transaction.
     const transactionID = process.argv.slice(2).toString(); 
-    const result = await contract.evaluateTransaction('readDocAsset',transactionID);
+    if (transactionID == "") 
+    {
+      console.log ('TransactionID is null');
+      throw "[missing argument] - $ node ./dist/query.js transactionID";
+    } else
+    {
+    const result = await contract.evaluateTransaction('readDocAsset', transactionID);
     console.log("Transaction has been evaluated, result is:" + result.toString());
+    }
 
     // Disconnect from the gateway.
     gateway.disconnect();

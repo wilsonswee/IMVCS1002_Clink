@@ -29,8 +29,19 @@ async function main(): Promise<void> {
     const contract: Contract = network.getContract('contract');
 
     // Submit the specified transaction.
-    await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T','', '30/6/2021', 'Dr Rizal', 'Malaysia','','' );
-    console.log('Transaction committed');
+    var data = process.argv.slice(2);
+    const trxn = data[0];
+    const IDPassport = data[1];
+    const uen = data[2];
+    const incorporationDate = data[3];
+    const PersonInCharge = data[4];
+    const address = data[5];
+    const charityStatus = data[6];
+    const picStatus = data[7];
+  
+   // await contract.submitTransaction('createDocAsset', 'REF6', 'G70102938T','', '30/6/2021', 'Dr Rizal', 'Malaysia','','' );
+   await contract.submitTransaction('createDocAsset', trxn, IDPassport, uen, incorporationDate, PersonInCharge, address, charityStatus, picStatus )
+   console.log('Transaction committed');
 
     // Disconnect from the gateway.
     gateway.disconnect();

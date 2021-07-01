@@ -44,8 +44,14 @@ async function main() {
         //await contract.submitTransaction('createDocAsset', 'REF4', 'APP123456','', '6/6/2021', 'Benny Siow', 'Tekong Island' );
         //const result = await contract.evaluateTransaction('readDocAsset','REF6');
         const transactionID = process.argv.slice(2).toString();
-        const result = await contract.evaluateTransaction('readDocAsset', transactionID);
-        console.log("Transaction has been evaluated, result is:" + result.toString());
+        if (transactionID == "") {
+            console.log('TransactionID is null');
+            throw "[missing argument] - $ node ./dist/query.js transactionID";
+        }
+        else {
+            const result = await contract.evaluateTransaction('readDocAsset', transactionID);
+            console.log("Transaction has been evaluated, result is:" + result.toString());
+        }
         // Disconnect from the gateway.
         gateway.disconnect();
         process.exit();

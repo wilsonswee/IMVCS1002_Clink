@@ -42,7 +42,13 @@ async function main() {
         // Get the contract from the network.
         const contract = network.getContract('contract');
         // Submit the specified transaction.
-        await contract.submitTransaction('updateDocAsset', 'REF6', '', 'Y', 'N');
+        // await contract.submitTransaction('updateDocAsset', 'REF6', '','Y','N' );
+        var data = process.argv.slice(2);
+        const trxn = data[0];
+        const uen = data[1];
+        const charityStatus = data[2];
+        const picStatus = data[3];
+        await contract.submitTransaction('updateDocAsset', trxn, uen, charityStatus, picStatus);
         console.log('Transaction committed ');
         // Disconnect from the gateway.
         gateway.disconnect();

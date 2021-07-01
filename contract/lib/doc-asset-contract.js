@@ -58,17 +58,7 @@ class DocAssetContract extends Contract {
         return (!!buffer && buffer.length > 0);
     }
 
-/*    async createDocAsset(ctx, docAssetId, value) {
-        const exists = await this.docAssetExists(ctx, docAssetId);
-        if (exists) {
-            throw new Error(`The doc asset ${docAssetId} already exists`);
-        }
-        const asset = { value };
-        const buffer = Buffer.from(JSON.stringify(asset));
-        await ctx.stub.putState(docAssetId, buffer);
-    }
-*/
-//async createDocAsset(ctx, docAssetId, IDPassport, uen, incorporationDate, PersonInCharge, address) {
+
     async createDocAsset(ctx, docAssetId, IDPassport, uen, incorporationDate, PersonInCharge, address, charityStatus, picStatus) {
         console.info('============= START : Create DocAsset ===========');
         

@@ -27,9 +27,19 @@ async function main(): Promise<void> {
 
     // Submit the specified transaction.
     //await contract.submitTransaction('createDocAsset', 'REF4', 'APP123456','', '6/6/2021', 'Benny Siow', 'Tekong Island' );
-    const result = await contract.evaluateTransaction('docAssetExists','REF6');
-    console.log("Transaction has been evaluated, result is:" + result.toString());
+    //const result = await contract.evaluateTransaction('docAssetExists','REF6');
 
+    const transactionID = process.argv.slice(2).toString();
+    if (transactionID == "") 
+    {
+      console.log ('TransactionID is null');
+      throw "[missing argument] - $ node ./dist/queryDocExist.js transactionID";
+    } else
+    {
+
+    const result = await contract.evaluateTransaction('docAssetExists', transactionID);
+    console.log("[queryDocExist] Checking if  " + transactionID +  " ---->"+ result.toString());
+    }
     // Disconnect from the gateway.
     gateway.disconnect();
     process.exit();

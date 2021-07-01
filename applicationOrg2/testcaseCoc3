@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+# This is a test case file to simulate Blockchain data flow
+
+# This is a test case file to simulate Blockchain data flow
+# We will be using REFxx as our transaction ID where xx can be any number 
+# This can be changed to any transactionID, but you will need to
+# use it throughout the test case to simulate the Blockchain.
+# To simulate, do the following sequence
+# $./testcase1
+# 
+# $./testcaseAcra2
+#
+# $ cd ../application2
+# $ ./testcaseCOC3
+# Do take note that transaction ID must be modified in all testcase
+# files to simulate the blockchain.
+
+# set environment - Modify these TEST environments to perform your test
+# make sure there are no spaces between variable and assignment
+TEST_TRXNID="REF17"
+TEST_CHARITYSTATUS="Y"
+
+# 
+echo "-------------->Running testcase COC3 --- Simulation for ORG2 to update $TEST_TRXNID with TEST_CHARITYSTATUS=$TEST_CHARITYSTATUS"
+node ./dist/query.js $TEST_TRXNID
+
+echo "----------------------->sleep for 5 seconds"
+sleep 5
+
+# End User will apply new document thru FABRIC SDK via  Org1 (ACRA) and populate the fields
+# IDPassport, incorporateDate, PersonInCharge, address
+# TransactionID is manually create in simulation - e.g REF8,REF9, REF10 and incrementally
+# create.js [TransactionID] [IDPassport] [uen] [incorporateDate] [PersonInCharge] [address] [charityStatus] [picStatus]
+echo "node ./dist/update.js $TEST_TRXNID '' $TEST_CHARITYSTATUS '' '' "
+node ./dist/update.js $TEST_TRXNID '' $TEST_CHARITYSTATUS '' ''
+
+echo "----------------------->sleep for 5 seconds"
+sleep 5
+
+#verifies that this record is created in the blockchain with docType = ACRA_COC_Org2
+echo "node ./dist/query.js $TEST_TRXNID"
+node ./dist/query.js $TEST_TRXNID
+
+echo "end of client COC test simulation"
