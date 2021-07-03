@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "contract",
+			"path": "contract"
+		},
+		{
+			"path": "application"
+		},
+		{
+			"path": "applicationOrg2"
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu-20.04",
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

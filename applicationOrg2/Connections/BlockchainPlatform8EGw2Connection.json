@@ -1,0 +1,43 @@
+{
+    "name": "Blockchain Platform-8e_gw2",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org2MSP",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "organizations": {
+        "Org2MSP": {
+            "mspid": "Org2MSP",
+            "peers": [
+                "Peer1 Org2"
+            ],
+            "certificateAuthorities": [
+                "Org2 CA"
+            ]
+        }
+    },
+    "peers": {
+        "Peer1 Org2": {
+            "url": "grpcs://ne36270-peer1org2.mycluster-youtube2-b3b60e33056f6dc7beaec946573bb7cd-0000.us-south.containers.appdomain.cloud:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICDDCCAbKgAwIBAgIUY0QZw90x4yNrakegaOt/KYiisFowCgYIKoZIzj0EAwIw\nZDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRUwEwYDVQQDEwxvcmcyY2Et\ndGxzY2EwHhcNMjEwNjMwMTYxNzAwWhcNMzYwNjI2MTYxNzAwWjBkMQswCQYDVQQG\nEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNVBAoTC0h5cGVybGVk\nZ2VyMQ8wDQYDVQQLEwZGYWJyaWMxFTATBgNVBAMTDG9yZzJjYS10bHNjYTBZMBMG\nByqGSM49AgEGCCqGSM49AwEHA0IABEfS+emmeCFjvr+xI2QmQ6Q/BoWRcn7O2J3x\nORwAaJKKXAk96b2Sydv7rqPjLy7CU+kJf55wOUTe9BYep6GCWXmjQjBAMA4GA1Ud\nDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQWEnCzbqqvRwD5\n8zHQtFrfNsVUuTAKBggqhkjOPQQDAgNIADBFAiEAqmjuTTE1q6U8l6OxKvUvsGSg\nIeWc9WAyVfma71BovbQCIHpJTH+p29btr5UK2Trdm8DcBoX03iWeviTqxe96xf/Q\n-----END CERTIFICATE-----\n"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "Org2 CA": {
+            "url": "https://ne36270-org2ca.mycluster-youtube2-b3b60e33056f6dc7beaec946573bb7cd-0000.us-south.containers.appdomain.cloud:7054",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIIDjDCCAzKgAwIBAgIQf3D7KxUfvKtv9SX4sJgRCzAKBggqhkjOPQQDAjCB0DEL\nMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQHEwZE\ndXJoYW0xDDAKBgNVBAoTA0lCTTETMBEGA1UECxMKQmxvY2tjaGFpbjF0MHIGA1UE\nAxNrbmUzNjI3MC1vcmcyY2EubXljbHVzdGVyLXlvdXR1YmUyLWIzYjYwZTMzMDU2\nZjZkYzdiZWFlYzk0NjU3M2JiN2NkLTAwMDAudXMtc291dGguY29udGFpbmVycy5h\ncHBkb21haW4uY2xvdWQwHhcNMjEwNjMwMTYyMjE1WhcNMzEwNjI4MTYyMjE1WjCB\n0DELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\nEwZEdXJoYW0xDDAKBgNVBAoTA0lCTTETMBEGA1UECxMKQmxvY2tjaGFpbjF0MHIG\nA1UEAxNrbmUzNjI3MC1vcmcyY2EubXljbHVzdGVyLXlvdXR1YmUyLWIzYjYwZTMz\nMDU2ZjZkYzdiZWFlYzk0NjU3M2JiN2NkLTAwMDAudXMtc291dGguY29udGFpbmVy\ncy5hcHBkb21haW4uY2xvdWQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQciJ0d\n4/FeAw00dOXgpNPZjsNnmQ30AU8O1Ts0fPxwRMw/qKX1hx/0/ltz7fwcTszYKel7\nR2v5WMEElbHF6j+1o4HrMIHoMIHlBgNVHREEgd0wgdqCa25lMzYyNzAtb3JnMmNh\nLm15Y2x1c3Rlci15b3V0dWJlMi1iM2I2MGUzMzA1NmY2ZGM3YmVhZWM5NDY1NzNi\nYjdjZC0wMDAwLnVzLXNvdXRoLmNvbnRhaW5lcnMuYXBwZG9tYWluLmNsb3Vkgmtu\nZTM2MjcwLW9yZzJjYS5teWNsdXN0ZXIteW91dHViZTItYjNiNjBlMzMwNTZmNmRj\nN2JlYWVjOTQ2NTczYmI3Y2QtMDAwMC51cy1zb3V0aC5jb250YWluZXJzLmFwcGRv\nbWFpbi5jbG91ZDAKBggqhkjOPQQDAgNIADBFAiEA0BR7c1QmztNMmL2oWi/0dJTQ\nkcUg6dJbCq2uF7WgglACIHiJJThtAa1+fmCYO4zboak6keHC88tZ/saO2yPkF9QV\n-----END CERTIFICATE-----\n"
+            }
+        }
+    }
+}

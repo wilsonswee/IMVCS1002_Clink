@@ -17,7 +17,7 @@
 
 # set environment - Modify these TEST environments to perform your test
 # make sure there are no spaces between variable and assignment
-TEST_TRXNID="REF17"
+TEST_TRXNID="REF4"
 TEST_CHARITYSTATUS="Y"
 
 # 

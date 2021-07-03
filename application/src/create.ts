@@ -1,25 +1,23 @@
 import { Gateway, Wallets, Wallet, Network, Contract } from 'fabric-network';
 import * as path from 'path';
 import * as fs from 'fs';
+const config = require("../config.json");
 
 async function main(): Promise<void> {
   try {
 
     // Create a new file system based wallet for managing identities.
-    //const walletPath: string = path.join(process.cwd(), 'Org1Wallet');
-    const walletPath: string = path.join(process.cwd(), 'IBPOrg1Wallet');
+    const walletPath: string = path.join(process.cwd(), config.Wallet);
     const wallet: Wallet = await Wallets.newFileSystemWallet(walletPath);
     console.log(`Wallet path: ${walletPath}`);
 
     // Create a new gateway for connecting to our peer node.
     const gateway: Gateway = new Gateway();
-    //const connectionProfilePath: string = path.resolve(__dirname, '..', 'connection.json');
-    const connectionProfilePath: string = path.resolve(__dirname, '..', 'BlockchainPlatformClinkGwConnection.json');
-    
+    const connectionProfilePath: string = path.resolve(__dirname, '..', config.connectionFabricGateWay);   
     const connectionProfile: any = JSON.parse(fs.readFileSync(connectionProfilePath, 'utf8')); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
     
     //const connectionOptions: any = { wallet, identity: 'Org1 Admin', discovery: { enabled: true, asLocalhost: true } };
-    const connectionOptions: any = { wallet, identity: 'Org1 CA Admin', discovery: { enabled: true, asLocalhost: false } };
+    const connectionOptions: any = { wallet, identity: config.Organization, discovery: { enabled: true, asLocalhost: config.asLocalhost } };
     await gateway.connect(connectionProfile, connectionOptions);
 
     // Get the network (channel) our contract is deployed to.

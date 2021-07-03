@@ -17,8 +17,8 @@
 
 # set environment - Modify these TEST environments to perform your test
 # make sure there are no spaces between variable and assignment
-TEST_TRXNID="REF17"
-TEST_UEN="2021UEN888888A"
+TEST_TRXNID="REF4"
+TEST_UEN="2021UEN4444444C"
 
 echo "------------->Running testcase ACRA2 --- Simulation for ORG1 to update $TEST_TRXNID with TEST_UEN=$TEST_UEN"
 

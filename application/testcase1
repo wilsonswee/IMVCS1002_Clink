@@ -15,11 +15,11 @@
 
 # set environment - Modify these TEST environments to perform your test
 # make sure there are no spaces
-TEST_TRXNID="REF17"
-TEST_IDPASSPORT="S88888888M"
-TEST_DATEOFINCORPORATION="8/8/2018"
-TEST_PERSONINCHARGE="Mr Teng"
-TEST_ADDRESS="88 Woodlands Ave 8"
+TEST_TRXNID="REF4"
+TEST_IDPASSPORT="S44444444M"
+TEST_DATEOFINCORPORATION="4/4/2014"
+TEST_PERSONINCHARGE="Dr Rizal Blockchain"
+TEST_ADDRESS="44 Woodlands Ave 4"
 
 echo "-------->Running testcase User Client accessing via Fabric SDK--- Simulation for ORG1 to create $TEST_TRXNID"
 

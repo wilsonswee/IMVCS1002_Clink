@@ -1,0 +1,6 @@
+{
+"Organization": "Org1 Admin",
+"Wallet":"wallet/Org1",
+"connectionFabricGateWay":"Connections/2OrgLocalOrg1GatewayConnection.json",
+"asLocalhost":"true"
+}
