@@ -9,3 +9,4 @@ Yeong Chun Yee
 This MVE attempt to showcase Hyperledger Fabric using
 IBM Blockchain Platform extension on vScode IBP extension with KUbernetes cluster on IBM Cloud.
 
+https://www.youtube.com/channel/UCPj19iIPuHWcN54iHU8d_KA
